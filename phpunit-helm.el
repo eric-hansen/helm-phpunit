@@ -1,4 +1,4 @@
-;;; phpunit-helm --- Helm integration for phpunit.el
+;;; phpunit-helm.el --- Helm integration for phpunit.el
 
 ;; Copyright (C) 2016 Eric Hansen
 
