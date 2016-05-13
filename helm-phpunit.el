@@ -1,4 +1,4 @@
-;;; phpunit-helm.el --- Helm integration for phpunit.el
+;;; helm-phpunit.el --- Helm integration for phpunit.el
 
 ;; Copyright (C) 2016 Eric Hansen
 
@@ -19,7 +19,7 @@
 (require 'phpunit)
 (require 'helm)
 
-(defun phpunit-helm-get-all-test-candidates ()
+(defun helm-phpunit-get-all-test-candidates ()
   "Populates Helm with a lsit of test functions within a class/file."
   (with-helm-current-buffer
     (let ((test-functions '()))
@@ -35,10 +35,10 @@
 	(action . (lambda (test)
 		    (phpunit-selected-test test)))))
 
-(defun phpunit-helm-select-test ()
+(defun helm-phpunit-select-test ()
   "This is the call that should be ran to pull up Helm and choose the test."
   (interactive)
-  (helm :sources '(phpunit-helm-select-test-source)
+  (helm :sources '(helm-phpunit-select-test-source)
 	:buffer "*phpunit-function-tests*"))
 
 ;;;###autoload
@@ -48,6 +48,6 @@
   (let ((args (s-concat " --filter '" (phpunit-get-current-class) "::" test-function "'")))
     (phpunit-run args)))
 
-(provide 'phpunit-helm)
+(provide 'helm-phpunit)
 
-;;; phpunit-helm.el ends here
+;;; helm-phpunit.el ends here
