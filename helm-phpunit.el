@@ -4,7 +4,7 @@
 
 ;; Author: Eric Hansen <hansen.c.eric@gmail.com>
 ;; Version: 1.0.0
-;; Package-Requires: ((helm "0.0.0") (phpunit "0.7.0"))
+;; Package-Requires: ((helm "1.9.5") (phpunit "0.7.0"))
 ;; Keywords: phpunit helm php
 ;; URL: https://github.com/eric-hansen/phpunit-helm
 
@@ -42,7 +42,7 @@
 	:buffer "*phpunit-function-tests*"))
 
 ;;;###autoload
-(defun phpunit-selected-test (test)
+(defun helm-phpunit-selected-test (test)
   "Launch PHPUnit on the selected test by Helm."
   (interactive)
   (let ((args (s-concat " --filter '" (phpunit-get-current-class) "::" test-function "'")))
