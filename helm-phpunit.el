@@ -29,9 +29,9 @@
 	  (add-to-list 'test-functions (match-string-no-properties 1))))
       test-functions)))
 
-(setq phpunit-helm-select-test-source
+(setq helm-phpunit-select-test-source
       '((name . "PHPUnit Tests")
-	(candidates . phpunit-helm-get-all-test-candidates)
+	(candidates . helm-phpunit-get-all-test-candidates)
 	(action . (lambda (test)
 		    (phpunit-selected-test test)))))
 
